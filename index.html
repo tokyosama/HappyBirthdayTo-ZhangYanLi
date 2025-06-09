@@ -1272,6 +1272,21 @@
         ); /* 等第一段淡入后再开始逐字淡入 */
         display: inline-block;
       }
+      .happy{
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        height: 40px;
+        font-size: 20px;
+        color: violet;
+        
+      }
+      #happytext{
+        
+      }
+      #happynum{
+        font-size: 40px;
+      }
 
       @keyframes fadeIn {
         to {
@@ -1345,8 +1360,18 @@
       <div id="message"></div>
       <div class="second-line" id="blessing"></div>
     </div>
+    <div class="happy">
+      <div class="t">今日开心值:</div>
+      <div id="happynum">0</div>
+    </div>
+    <div class="happytext">
+      太帮你
+    </div>
 
     <script>
+      let happynum=0
+      const happynumHtMl = document.getElementById("happynum");
+
       function createSakura() {
         const sakura = document.createElement("div");
         sakura.className = "sakura";
@@ -1534,11 +1559,16 @@
           clearInterval(autoFire);
         }
         fireCount++;
+        happynum+=fireworks.length*10
+        happynumHtMl.innerHTML=happynum+'！'
+
       }, 500);
 
       // 点击触发额外烟花
       canvas.addEventListener("click", (e) => {
         fireworks.push(new Firework(W / 2, H, e.clientX, e.clientY));
+        happynum+=fireworks.length*10
+        happynumHtMl.innerHTML=happynum+'！'
       });
 
       animate();
