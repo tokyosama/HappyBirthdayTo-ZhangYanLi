@@ -2,7 +2,7 @@
 <html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <title>张艳丽女士生日快乐</title>
+    <title>哈哈哈女士生日快乐</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1"
@@ -59,6 +59,8 @@
         font-weight: 400;
         z-index: -1;
         letter-spacing: 6px;
+        pointer-events: none;
+
       }
 
       span {
@@ -67,6 +69,7 @@
         width: 100%;
         top: 70px;
         font-size: 70px;
+        pointer-events: none;
       }
 
       h2 {
@@ -77,6 +80,8 @@
         background: -webkit-linear-gradient(90deg, #e9e6ff 0%, white 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        pointer-events: none;
+
       }
 
       bokeh {
@@ -711,6 +716,8 @@
         top: 0px;
         pointer-events: none;
         scale: 0.75;
+        opacity: 1;
+        
       }
       .cake {
         position: relative;
@@ -761,6 +768,7 @@
         position: fixed;
         height: 5px;
         top: 0px;
+        opacity: 1;
       }
 
       #flame {
@@ -782,6 +790,8 @@
         /*   http://www.css3.info/preview/box-shadow/ */
         box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
         transform-origin: bottom;
+        pointer-events: none;
+
         animation: flicker 1s ease-in-out alternate infinite;
       }
 
@@ -1230,11 +1240,11 @@
         font-weight: 900;
         background-image: -webkit-linear-gradient(
           left,
-          #147b96,
+          #2abce0,
           #e6d205 25%,
           #147b96 50%,
           #e6d205 75%,
-          #147b96
+          rgb(55, 172, 226)
         );
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
@@ -1272,6 +1282,30 @@
         ); /* 等第一段淡入后再开始逐字淡入 */
         display: inline-block;
       }
+      #lovetext{
+        position: absolute;
+        height: 70%;
+        width: 70%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 20%;
+        pointer-events: none;
+        color: white;
+        font-size: 18px;
+        font-family:'sans-serif';
+      
+        /* text-shadow: 0 0 10px rgb(231, 69, 231), 0 0 20px rgb(226, 120, 226),
+          0 0 30px rgb(231, 69, 231), 0 0 40px rgb(233, 172, 233); */
+      }
+      .lovetext i{
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: calc(
+           var(--x) * 0.25s
+        );
+        display: inline-block;
+      }
       .happy{
         position: absolute;
         top: 8px;
@@ -1282,7 +1316,15 @@
         
       }
       #happytext{
-        
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        height: 40px;
+        font-size: 18px;
+        font-weight: 500;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        color: rgb(130, 207, 238);
       }
       #happynum{
         font-size: 40px;
@@ -1292,6 +1334,34 @@
         to {
           opacity: 1;
         }
+      }
+
+      #agree{
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 20px;
+            background-color: #46cef0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+
+      }
+      #disagree{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+            background-color: #dd2828;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+transition: opacity 2s ease-in-out;
       }
     </style>
   </head>
@@ -1341,15 +1411,17 @@
     <bokeh></bokeh>
     <bokeh></bokeh>
     <bokeh></bokeh>
+    <audio id="bgm" src="./1.mp3"
+       preload="auto" loop></audio>
     <canvas id="canvas"></canvas>
-    <span class="candlet">🎉</span>
+    <span class="candlet" id="candlet">🎉</span>
 
     <div class="pyro">
       <div class="before"></div>
       <div class="after"></div>
     </div>
 
-    <div class="box">
+    <div class="box" id="box">
       <h2>Happy Birthday</h2>
 
       <div class="plate"></div>
@@ -1361,29 +1433,41 @@
       <div class="second-line" id="blessing"></div>
     </div>
     <div class="happy">
-      <div class="t">今日开心值:</div>
+      <div class="t" id="todayHappy">今日开心值:</div>
       <div id="happynum">0</div>
     </div>
-    <div class="happytext">
-      太帮你
+    <div id="happytext">
     </div>
+    <div id="lovetext" class="lovetext"></div>
+    <div id="agree">我同意</div>
+
+    <div id="disagree">不同意</div>
 
     <script>
+      // 背景音乐自动播放（用户首次点击触发）
+const bgm = document.getElementById('bgm');
+const bokehs = document.getElementsByTagName('bokeh');
+
+const box = document.getElementById('box');
+const candlet = document.getElementById('candlet');
+
       let happynum=0
       const happynumHtMl = document.getElementById("happynum");
+      const happytext = document.getElementById("happytext");
 
+      let sakuraText='&#x1F338'
       function createSakura() {
         const sakura = document.createElement("div");
         sakura.className = "sakura";
-
+        sakura.style.color='pink'
         const left = Math.random() * window.innerWidth;
         const animationDuration = Math.random() * 4 + 3;
 
         sakura.style.left = `${left}px`;
         sakura.style.animationDuration = `${animationDuration}s`;
 
-        sakura.innerHTML = "&#x1F338;";
-
+        sakura.innerHTML = sakuraText
+       
         document.body.appendChild(sakura);
 
         sakura.addEventListener("animationend", () => {
@@ -1499,7 +1583,7 @@
 
       function explodeText(x, y) {
         const canvas = document.getElementById("message");
-        canvas.innerHTML = "祝张艳丽生日快乐！";
+        canvas.innerHTML = "祝哈哈哈生日快乐！";
         canvas.style.opacity = "0";
         canvas.style.animation = "fadeIn 2s ease forwards";
         canvas.style.animationDelay = "0s";
@@ -1546,7 +1630,9 @@
           p.draw();
         });
       }
-
+      let textlist=['哇！你太幸福了','快乐的小仙女一枚鸭~','给快乐加加油','有张力，既鲜艳，又美丽',' 今日快乐值爆棚！！！','你好像又年轻了一岁','我太喜欢你了❤','你真棒👍','快乐还能多一点嘛','厉害，好崇拜你哦']
+      let count = 0;
+      let lastThreshold = 0;
       // 自动烟花 + 最后一发为字形
       let fireCount = 0;
       const autoFire = setInterval(() => {
@@ -1560,7 +1646,8 @@
         }
         fireCount++;
         happynum+=fireworks.length*10
-        happynumHtMl.innerHTML=happynum+'！'
+        happynumHtMl.innerHTML=happynum
+        onIncrease(happynum);
 
       }, 500);
 
@@ -1568,8 +1655,127 @@
       canvas.addEventListener("click", (e) => {
         fireworks.push(new Firework(W / 2, H, e.clientX, e.clientY));
         happynum+=fireworks.length*10
-        happynumHtMl.innerHTML=happynum+'！'
+        happynumHtMl.innerHTML=happynum
+        console.log('dianjui');
+        onIncrease(happynum);
       });
+// iOS 需要用户交互才能播放，所以监听首次点击页面
+function tryPlayBGM() {
+  bgm.play().catch(() => {}); // 捕获错误避免警告
+  window.removeEventListener('click', tryPlayBGM);
+  setTimeout(() => {
+    bgm.pause()
+    bgm.src='./2.mp3'
+    bgm.play()
+    box.style.transition='opacity 2s ease-in-out'
+    candlet.style.transition='opacity 2s ease-in-out'
+    box.style.opacity='0'
+    candlet.style.opacity='0'
+    for (let i = 0; i < bokehs.length; i++) {
+      const e = bokehs[i];
+      e.style.display='none'
+    }
+       // 你可以在这里修改祝福语
+       const c=''
+       const blessingText = "亲爱的哈哈哈，我常常在想能遇到像你这样的人是多么珍贵，有些感受越来越清晰，我必须认真地把心意告诉你";
+    const agreeText='太好了，我也同意，我们在一起吧'
+const agree = document.getElementById("agree");
+const disagree = document.getElementById("disagree");
+const todayHappy = document.getElementById("todayHappy");
+todayHappy.innerHTML='今日幸福指数:'
+const container = document.getElementById("lovetext");
+let isagree=false;
+[...blessingText].forEach((char, index) => {
+  const span = document.createElement("i");
+  span.textContent = char;
+  span.style.setProperty("--x", index);
+  // span.style.animationDelay=`${(index * 0.3)}s`
+  container.appendChild(span);
+});
+setTimeout(()=>{
+agree.style.opacity=1
+disagree.style.opacity=1
+},1000*blessingText.length*0.25)
+agree.addEventListener("click", (e) => {
+  if (!isagree) {
+    sakuraText='❤'
+  isagree=true;
+  disagree.style.display='none';
+  const br = document.createElement("br");
+  container.appendChild(br);
+
+  [...agreeText].forEach((char, index) => {
+  const span = document.createElement("i");
+  span.textContent = char;
+  span.style.setProperty("--x", index);
+  span.style.textShadow=`0 0 10px rgb(231, 69, 231), 0 0 20px rgb(226, 120, 226), 0 0 30px rgb(231, 69, 231), 0 0 40px rgb(233, 172, 233)`
+  container.appendChild(span);
+});
+  }
+
+})
+disagree.addEventListener("click", (e) => {
+  e.preventDefault();
+moveButton();
+})
+
+  }, 4000);
+}
+window.addEventListener('click', tryPlayBGM);
+
+// 可选：自动尝试播放（桌面浏览器可能能成功）
+setTimeout(() => {
+console.log('播放');
+
+  bgm.play().catch(() => {});
+}, 1000);
+      function onIncrease(value) {
+  const currentThreshold = Math.floor(value / 1000);
+  if (currentThreshold > lastThreshold) {
+    lastThreshold = currentThreshold;
+    happytext.innerHTML=value>1000?textlist[currentThreshold%10] :""
+    happytext.style.color= getColor()
+   
+  }
+}
+let attempts = 0;
+function moveButton() {
+            const buttonWidth = disagree.offsetWidth;
+            const buttonHeight = disagree.offsetHeight;
+            
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // 计算安全区域（确保按钮完全可见）
+            const maxX = windowWidth - buttonWidth - 20;
+            const maxY = windowHeight - buttonHeight - 20;
+            
+            // 生成随机位置（最小距离20px）
+            const randomX = 20 + Math.random() * maxX;
+            const randomY = 20 + Math.random() * maxY;
+            
+            // 应用新位置
+            disagree.style.left = `${randomX}px`;
+            disagree.style.top = `${randomY}px`;
+            disagree.style.bottom = 'auto';
+            disagree.style.right = 'auto';
+            
+            // 更新尝试计数器
+            attempts++;
+            counter.textContent = attempts;
+            
+            // 添加动画效果
+            disagree.style.transition = 'all 0.2s ease';
+            setTimeout(() => {
+                disagree.style.transition = '';
+            }, 300);
+        }
+
+function getColor(){
+  return "hsl(" + 360 * Math.random() + ',' +
+             (25 + 70 * Math.random()) + '%,' +
+             (85 + 10 * Math.random()) + '%)'
+}
 
       animate();
     </script>
