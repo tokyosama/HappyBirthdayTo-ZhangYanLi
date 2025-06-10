@@ -1817,15 +1817,17 @@
     setTimeout(() => {
       bgm.play().catch(() => { });
     }, 1000);
+    let show = false
     function onIncrease(value) {
-      const currentThreshold = Math.floor(value / 1000);
+      const currentThreshold = Math.floor(value / 500);
       if (currentThreshold > lastThreshold) {
         lastThreshold = currentThreshold;
-        happytext.innerHTML = value > 1000 ? textlist[currentThreshold % 10] : ""
+        happytext.innerHTML = value > 500 ? textlist[currentThreshold % 10] : ""
         happytext.style.color = getColor()
         console.log('value', value);
 
-        if (value > 10000) {
+        if (value > 5000 && !show) {
+          show = true
           sakuraText = '❤'
           bgm.pause()
           bgm.src = './2.mp3'
