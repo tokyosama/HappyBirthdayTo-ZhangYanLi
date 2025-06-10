@@ -1829,6 +1829,9 @@
         if (value > 5000 && !show) {
           show = true
           sakuraText = '❤'
+          document.querySelectorAll('.sakura').forEach(el => {
+            el.innerHTML = sakuraText;
+          });
           bgm.pause()
           bgm.src = './2.mp3'
           bgm.play()
