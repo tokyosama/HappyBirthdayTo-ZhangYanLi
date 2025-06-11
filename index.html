@@ -302,13 +302,18 @@
                     if (value == 'ILOVEYOU') {
                         m.innerHTML = '很有魔力的祝福咒语呢'
                         m.style.color = 'pink'
+                        var queryString = "?param1=" + encodeURIComponent('ILOVEYOU');
+                        setTimeout(() => {
+                            window.location.href = './1.html' + queryString
+                        }, 1000);
                     } else {
                         m.innerHTML = '咒语魔力还差点'
                         m.style.color = '#fec086'
+                        setTimeout(() => {
+                            window.location.href = './1.html'
+                        }, 1000);
                     }
-                    setTimeout(() => {
-                        window.location.href = './1.html'
-                    }, 1000);
+
                 }
 
             } else {

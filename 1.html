@@ -1486,7 +1486,7 @@
     #agree {
       position: absolute;
       bottom: 20px;
-      left: calc(50% - 18px);
+      left: calc(50% - 0px);
       padding: 10px 20px;
       background-color: #46cef0;
       color: white;
@@ -1592,6 +1592,18 @@
   <div id="disagree">不同意</div>
 
   <script>
+    // 获取当前页面的 URL
+    var url = window.location.href;
+
+    // 创建一个 URL 对象
+    var urlObj = new URL(url);
+
+    // 使用 URLSearchParams 对象来解析查询字符串
+    var params = new URLSearchParams(urlObj.search);
+
+    // 获取参数值
+    var param1 = params.get('param1');
+
     // 背景音乐自动播放（用户首次点击触发）
     const bgm = document.getElementById('bgm');
     const bokehs = document.getElementsByTagName('bokeh');
@@ -1826,7 +1838,7 @@
         happytext.style.color = getColor()
         console.log('value', value);
 
-        if (value > 5000 && !show) {
+        if (value > 5000 && !show && param1) {
           show = true
           sakuraText = '❤'
           document.querySelectorAll('.sakura').forEach(el => {
