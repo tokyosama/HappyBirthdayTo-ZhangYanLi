@@ -1,1934 +1,323 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>张艳丽女士生日快乐</title>
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1" />
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Concert+One|Pacifico");
-
-    .mobile {
-      position: fixed;
-      text-align: center;
-      width: 100%;
-      top: 50px;
-      font-size: 16px;
-      display: block;
-    }
-
-    h1,
-    h2,
-    span {
-      display: none;
-    }
-
-    h1,
-    h2,
-    span {
-      display: block;
-    }
-
-    body {
-      background: linear-gradient(to right,
-          #e2b8f7,
-          #d4bafa,
-          #c7bcfb,
-          #b9befb,
-          #acbff9);
-      cursor: crosshair;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
-      font-family: "Pacifico", cursive;
-    }
-
-    h1 {
-      position: fixed;
-      text-align: center;
-      width: 100%;
-      top: 120px;
-      font-size: 90px;
-      background: -webkit-linear-gradient(0deg, #ceadfc 0%, #a3bbfb 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: "Concert One", cursive;
-      font-weight: 400;
-      z-index: -1;
-      letter-spacing: 6px;
-      pointer-events: none;
-
-    }
-
-    span {
-      position: fixed;
-      text-align: center;
-      width: 100%;
-      top: 70px;
-      font-size: 70px;
-      pointer-events: none;
-    }
-
-    h2 {
-      text-align: center;
-      width: 100%;
-      top: 50px;
-      font-size: 90px;
-      background: -webkit-linear-gradient(90deg, #e9e6ff 0%, white 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      pointer-events: none;
-
-    }
-
-    bokeh {
-      position: fixed;
-      width: 2vmin;
-      height: 2vmin;
-      border-radius: 50%;
-      animation-name: explosion;
-      animation-iteration-count: infinite;
-      animation-direction: reverse;
-      /* animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1); */
-    }
-
-    bokeh:nth-child(1) {
-      background-color: #feff28;
-      transform: translate(19.7487583923vw, 68.7688324071vh);
-      animation-duration: 4.1621369934s;
-      animation-delay: -1.1404253238s;
-    }
-
-    bokeh:nth-child(2) {
-      background-color: #ef8d22;
-      transform: translate(23.4996200544vw, 2.0070198256vh);
-      animation-duration: 3.5204801756s;
-      animation-delay: -0.0278958817s;
-    }
-
-    bokeh:nth-child(3) {
-      background-color: #ef8d22;
-      transform: translate(16.5241588768vw, 83.0279453552vh);
-      animation-duration: 3.2579376403s;
-      animation-delay: -2.9270554568s;
-    }
-
-    bokeh:nth-child(4) {
-      background-color: #feff28;
-      transform: translate(79.835313456vw, 61.3696587429vh);
-      animation-duration: 4.6841343778s;
-      animation-delay: -2.2921418792s;
-    }
-
-    bokeh:nth-child(5) {
-      background-color: #ef8d22;
-      transform: translate(40.5122157446vw, 55.6832889992vh);
-      animation-duration: 4.8106170989s;
-      animation-delay: -1.9024592644s;
-    }
-
-    bokeh:nth-child(6) {
-      background-color: #2bd8ff;
-      transform: translate(78.9582353749vw, 35.6907977583vh);
-      animation-duration: 2.7550153077s;
-      animation-delay: -0.1447982256s;
-    }
-
-    bokeh:nth-child(7) {
-      background-color: #feff28;
-      transform: translate(40.2806606891vw, 40.0989445475vh);
-      animation-duration: 2.6364696808s;
-      animation-delay: -4.5021717027s;
-    }
-
-    bokeh:nth-child(8) {
-      background-color: #fc85e1;
-      transform: translate(32.5298827351vw, 19.1463895184vh);
-      animation-duration: 4.6434577161s;
-      animation-delay: -1.5830591359s;
-    }
-
-    bokeh:nth-child(9) {
-      background-color: #feff28;
-      transform: translate(36.5492378015vw, 38.8275679632vh);
-      animation-duration: 2.0302242884s;
-      animation-delay: -3.0643159083s;
-    }
-
-    bokeh:nth-child(10) {
-      background-color: #ef8d22;
-      transform: translate(6.0971127082vw, 65.8207720619vh);
-      animation-duration: 3.9039181547s;
-      animation-delay: -0.6974662311s;
-    }
-
-    bokeh:nth-child(11) {
-      background-color: #ef8d22;
-      transform: translate(1.4471104895vw, 29.1637596937vh);
-      animation-duration: 4.9783430275s;
-      animation-delay: -4.6856304151s;
-    }
-
-    bokeh:nth-child(12) {
-      background-color: #feff28;
-      transform: translate(30.7771259838vw, 65.8699362086vh);
-      animation-duration: 4.9300884405s;
-      animation-delay: -4.5662443232s;
-    }
-
-    bokeh:nth-child(13) {
-      background-color: #fc85e1;
-      transform: translate(87.1708570217vw, 79.3181278973vh);
-      animation-duration: 4.8408594965s;
-      animation-delay: -0.7852745459s;
-    }
-
-    bokeh:nth-child(14) {
-      background-color: #2bd8ff;
-      transform: translate(22.2022745923vw, 32.079254011vh);
-      animation-duration: 3.42667487s;
-      animation-delay: -1.282121786s;
-    }
-
-    bokeh:nth-child(15) {
-      background-color: #feff28;
-      transform: translate(16.0561286067vw, 95.3597486897vh);
-      animation-duration: 2.9863714704s;
-      animation-delay: -3.5699225006s;
-    }
-
-    bokeh:nth-child(16) {
-      background-color: #feff28;
-      transform: translate(39.4614787314vw, 38.9789042267vh);
-      animation-duration: 4.1948762204s;
-      animation-delay: -3.119509982s;
-    }
-
-    bokeh:nth-child(17) {
-      background-color: #2bd8ff;
-      transform: translate(55.9113885373vw, 40.9135262628vh);
-      animation-duration: 4.0493765904s;
-      animation-delay: -3.2559677235s;
-    }
-
-    bokeh:nth-child(18) {
-      background-color: #2bd8ff;
-      transform: translate(94.644322226vw, 42.6327730614vh);
-      animation-duration: 3.2844326314s;
-      animation-delay: -1.4301641507s;
-    }
-
-    bokeh:nth-child(19) {
-      background-color: #2bd8ff;
-      transform: translate(74.1892495025vw, 11.3339334596vh);
-      animation-duration: 3.8230639335s;
-      animation-delay: -0.2652368206s;
-    }
-
-    bokeh:nth-child(20) {
-      background-color: #2bd8ff;
-      transform: translate(28.2091705855vw, 77.0718583355vh);
-      animation-duration: 2.7177701075s;
-      animation-delay: -4.8659646542s;
-    }
-
-    bokeh:nth-child(21) {
-      background-color: #feff28;
-      transform: translate(22.8827957342vw, 52.6605715384vh);
-      animation-duration: 4.0386973866s;
-      animation-delay: -2.7639208145s;
-    }
-
-    bokeh:nth-child(22) {
-      background-color: #fc85e1;
-      transform: translate(22.6731821053vw, 79.8077369569vh);
-      animation-duration: 4.2020937097s;
-      animation-delay: -3.7669347028s;
-    }
-
-    bokeh:nth-child(23) {
-      background-color: #2bd8ff;
-      transform: translate(41.3572357075vw, 86.8368388644vh);
-      animation-duration: 4.6263169081s;
-      animation-delay: -2.3110135086s;
-    }
-
-    bokeh:nth-child(24) {
-      background-color: #fc85e1;
-      transform: translate(52.9977193643vw, 35.6180567535vh);
-      animation-duration: 2.2201592228s;
-      animation-delay: -2.9241215352s;
-    }
-
-    bokeh:nth-child(25) {
-      background-color: #2bd8ff;
-      transform: translate(73.4315256117vw, 72.882778441vh);
-      animation-duration: 4.670241315s;
-      animation-delay: -2.948299534s;
-    }
-
-    bokeh:nth-child(26) {
-      background-color: #2bd8ff;
-      transform: translate(56.4846001904vw, 0.0547648758vh);
-      animation-duration: 4.3443344879s;
-      animation-delay: -0.9839999543s;
-    }
-
-    bokeh:nth-child(27) {
-      background-color: #fc85e1;
-      transform: translate(58.6080213546vw, 97.8854852192vh);
-      animation-duration: 3.455048346s;
-      animation-delay: -0.0926306891s;
-    }
-
-    bokeh:nth-child(28) {
-      background-color: #fc85e1;
-      transform: translate(66.2757947757vw, 51.0294171601vh);
-      animation-duration: 4.9188534572s;
-      animation-delay: -1.783995705s;
-    }
-
-    bokeh:nth-child(29) {
-      background-color: #2bd8ff;
-      transform: translate(40.2757362887vw, 87.1011519874vh);
-      animation-duration: 2.9922198988s;
-      animation-delay: -1.5645133571s;
-    }
-
-    bokeh:nth-child(30) {
-      background-color: #feff28;
-      transform: translate(3.5575242655vw, 3.626507111vh);
-      animation-duration: 2.019062641s;
-      animation-delay: -0.8599979544s;
-    }
-
-    bokeh:nth-child(31) {
-      background-color: #2bd8ff;
-      transform: translate(14.2790241513vw, 60.440112914vh);
-      animation-duration: 3.982023033s;
-      animation-delay: -2.2562558952s;
-    }
-
-    bokeh:nth-child(32) {
-      background-color: #2bd8ff;
-      transform: translate(76.2566782296vw, 41.1222476103vh);
-      animation-duration: 2.4203964011s;
-      animation-delay: -0.7342436515s;
-    }
-
-    bokeh:nth-child(33) {
-      background-color: #feff28;
-      transform: translate(80.392729993vw, 5.8057152197vh);
-      animation-duration: 4.0493934498s;
-      animation-delay: -2.7207858382s;
-    }
-
-    bokeh:nth-child(34) {
-      background-color: #feff28;
-      transform: translate(5.6920339835vw, 66.3691040971vh);
-      animation-duration: 2.0487549203s;
-      animation-delay: -4.7625990913s;
-    }
-
-    bokeh:nth-child(35) {
-      background-color: #fc85e1;
-      transform: translate(30.0444532395vw, 16.540987546vh);
-      animation-duration: 3.4594643482s;
-      animation-delay: -1.2457867924s;
-    }
-
-    bokeh:nth-child(36) {
-      background-color: #fc85e1;
-      transform: translate(53.4999197815vw, 57.4759826489vh);
-      animation-duration: 3.1827399124s;
-      animation-delay: -4.184127529s;
-    }
-
-    bokeh:nth-child(37) {
-      background-color: #fc85e1;
-      transform: translate(97.6811256884vw, 56.845685561vh);
-      animation-duration: 4.926579918s;
-      animation-delay: -3.0103307639s;
-    }
-
-    bokeh:nth-child(38) {
-      background-color: #ef8d22;
-      transform: translate(87.750541551vw, 78.665651621vh);
-      animation-duration: 2.2924470397s;
-      animation-delay: -3.1302961377s;
-    }
-
-    bokeh:nth-child(39) {
-      background-color: #feff28;
-      transform: translate(62.1082695837vw, 96.4034798391vh);
-      animation-duration: 4.5082608735s;
-      animation-delay: -0.6123907855s;
-    }
-
-    bokeh:nth-child(40) {
-      background-color: #ef8d22;
-      transform: translate(20.6037934825vw, 97.8421790032vh);
-      animation-duration: 3.6746383609s;
-      animation-delay: -3.3801477252s;
-    }
-
-    bokeh:nth-child(41) {
-      background-color: #ef8d22;
-      transform: translate(99.5154848632vw, 78.3679987217vh);
-      animation-duration: 3.7459162361s;
-      animation-delay: -2.159978866s;
-    }
-
-    bokeh:nth-child(42) {
-      background-color: #feff28;
-      transform: translate(94.6052178441vw, 4.1617714713vh);
-      animation-duration: 3.1000621244s;
-      animation-delay: -0.9727027423s;
-    }
-
-    bokeh:nth-child(43) {
-      background-color: #feff28;
-      transform: translate(20.2929093036vw, 18.7052188166vh);
-      animation-duration: 2.7531107762s;
-      animation-delay: -4.0930239814s;
-    }
-
-    bokeh:nth-child(44) {
-      background-color: #feff28;
-      transform: translate(95.9472576915vw, 86.8976158976vh);
-      animation-duration: 2.0705171273s;
-      animation-delay: -0.7446992358s;
-    }
-
-    bokeh:nth-child(45) {
-      background-color: #2bd8ff;
-      transform: translate(65.0251014703vw, 53.4672818998vh);
-      animation-duration: 3.5021199045s;
-      animation-delay: -1.831355889s;
-    }
-
-    bokeh:nth-child(46) {
-      background-color: #ef8d22;
-      transform: translate(47.2804669584vw, 61.9638787209vh);
-      animation-duration: 3.047766952s;
-      animation-delay: -3.1679882994s;
-    }
-
-    bokeh:nth-child(47) {
-      background-color: #2bd8ff;
-      transform: translate(70.3808928277vw, 61.5759922344vh);
-      animation-duration: 2.5285571878s;
-      animation-delay: -4.0480467677s;
-    }
-
-    bokeh:nth-child(48) {
-      background-color: #2bd8ff;
-      transform: translate(78.2278247542vw, 26.4899379656vh);
-      animation-duration: 4.4038390909s;
-      animation-delay: -4.2077537478s;
-    }
-
-    bokeh:nth-child(49) {
-      background-color: #feff28;
-      transform: translate(80.906706554vw, 0.7294385367vh);
-      animation-duration: 3.4707688213s;
-      animation-delay: -4.4153336396s;
-    }
-
-    bokeh:nth-child(50) {
-      background-color: #fc85e1;
-      transform: translate(50.4487297741vw, 67.7939584948vh);
-      animation-duration: 2.3029131843s;
-      animation-delay: -0.8488223681s;
-    }
-
-    bokeh:nth-child(51) {
-      background-color: #fc85e1;
-      transform: translate(95.2772768731vw, 83.4726928684vh);
-      animation-duration: 3.5105509703s;
-      animation-delay: -3.6624592143s;
-    }
-
-    bokeh:nth-child(52) {
-      background-color: #ef8d22;
-      transform: translate(87.7949242305vw, 35.266084814vh);
-      animation-duration: 4.0691894434s;
-      animation-delay: -0.2118914576s;
-    }
-
-    bokeh:nth-child(53) {
-      background-color: #feff28;
-      transform: translate(62.2887826309vw, 28.6091998088vh);
-      animation-duration: 3.3755038872s;
-      animation-delay: -2.3344154932s;
-    }
-
-    bokeh:nth-child(54) {
-      background-color: #ef8d22;
-      transform: translate(25.1807041491vw, 49.0150099118vh);
-      animation-duration: 3.0453717917s;
-      animation-delay: -4.2472326691s;
-    }
-
-    bokeh:nth-child(55) {
-      background-color: #ef8d22;
-      transform: translate(58.0388675173vw, 76.8497755276vh);
-      animation-duration: 2.8497095453s;
-      animation-delay: -1.4264832558s;
-    }
-
-    bokeh:nth-child(56) {
-      background-color: #ef8d22;
-      transform: translate(2.8368461354vw, 58.11107909vh);
-      animation-duration: 2.9538238387s;
-      animation-delay: -0.9240352616s;
-    }
-
-    bokeh:nth-child(57) {
-      background-color: #ef8d22;
-      transform: translate(13.0814986727vw, 29.4585031031vh);
-      animation-duration: 2.5919443414s;
-      animation-delay: -3.3981131484s;
-    }
-
-    bokeh:nth-child(58) {
-      background-color: #2bd8ff;
-      transform: translate(47.0962279324vw, 6.6332793651vh);
-      animation-duration: 3.8901104161s;
-      animation-delay: -4.5548590098s;
-    }
-
-    bokeh:nth-child(59) {
-      background-color: #feff28;
-      transform: translate(6.9900971018vw, 1.3870295073vh);
-      animation-duration: 4.8917973277s;
-      animation-delay: -3.0107668415s;
-    }
-
-    bokeh:nth-child(60) {
-      background-color: #2bd8ff;
-      transform: translate(7.4196602371vw, 50.8749989384vh);
-      animation-duration: 3.1294080997s;
-      animation-delay: -2.251562814s;
-    }
-
-    bokeh:nth-child(61) {
-      background-color: #fc85e1;
-      transform: translate(11.0920385594vw, 99.4334474002vh);
-      animation-duration: 3.6617001656s;
-      animation-delay: -0.6860699141s;
-    }
-
-    bokeh:nth-child(62) {
-      background-color: #feff28;
-      transform: translate(98.458117622vw, 16.3890685156vh);
-      animation-duration: 3.6560617732s;
-      animation-delay: -0.9334960846s;
-    }
-
-    bokeh:nth-child(63) {
-      background-color: #fc85e1;
-      transform: translate(18.9132512291vw, 89.788557894vh);
-      animation-duration: 3.8915061199s;
-      animation-delay: -1.5036684468s;
-    }
-
-    bokeh:nth-child(64) {
-      background-color: #feff28;
-      transform: translate(75.8320758249vw, 85.8080061465vh);
-      animation-duration: 3.6757496327s;
-      animation-delay: -2.7317088063s;
-    }
-
-    bokeh:nth-child(65) {
-      background-color: #feff28;
-      transform: translate(22.129816709vw, 17.3956307009vh);
-      animation-duration: 3.9482288464s;
-      animation-delay: -4.0919645764s;
-    }
-
-    bokeh:nth-child(66) {
-      background-color: #feff28;
-      transform: translate(44.3275000586vw, 28.5187043433vh);
-      animation-duration: 3.1234151381s;
-      animation-delay: -0.816850809s;
-    }
-
-    bokeh:nth-child(67) {
-      background-color: #2bd8ff;
-      transform: translate(60.1740489891vw, 71.7188072057vh);
-      animation-duration: 2.005824034s;
-      animation-delay: -4.8995931755s;
-    }
-
-    bokeh:nth-child(68) {
-      background-color: #feff28;
-      transform: translate(16.9848804347vw, 82.621297131vh);
-      animation-duration: 2.223285647s;
-      animation-delay: -3.059299311s;
-    }
-
-    bokeh:nth-child(69) {
-      background-color: #ef8d22;
-      transform: translate(57.6996020152vw, 45.6753249879vh);
-      animation-duration: 3.1495445444s;
-      animation-delay: -1.6518445369s;
-    }
-
-    bokeh:nth-child(70) {
-      background-color: #2bd8ff;
-      transform: translate(57.7245398295vw, 97.3646033153vh);
-      animation-duration: 3.2609565274s;
-      animation-delay: -0.7136378957s;
-    }
-
-    bokeh:nth-child(71) {
-      background-color: #feff28;
-      transform: translate(9.7871170872vw, 93.1484644648vh);
-      animation-duration: 4.14902851s;
-      animation-delay: -3.2543528069s;
-    }
-
-    bokeh:nth-child(72) {
-      background-color: #ef8d22;
-      transform: translate(55.0714355829vw, 20.5485657059vh);
-      animation-duration: 2.1382767088s;
-      animation-delay: -3.2749298797s;
-    }
-
-    bokeh:nth-child(73) {
-      background-color: #feff28;
-      transform: translate(79.5960163925vw, 3.7821002455vh);
-      animation-duration: 3.059368346s;
-      animation-delay: -4.9228702108s;
-    }
-
-    bokeh:nth-child(74) {
-      background-color: #fc85e1;
-      transform: translate(18.5425312769vw, 96.7015532193vh);
-      animation-duration: 3.3751695198s;
-      animation-delay: -2.7518225047s;
-    }
-
-    bokeh:nth-child(75) {
-      background-color: #ef8d22;
-      transform: translate(68.13228963vw, 20.7522455715vh);
-      animation-duration: 2.3144999169s;
-      animation-delay: -0.1255465523s;
-    }
-
-    bokeh:nth-child(76) {
-      background-color: #2bd8ff;
-      transform: translate(4.0821338488vw, 31.8994634766vh);
-      animation-duration: 3.4646893095s;
-      animation-delay: -4.7742300321s;
-    }
-
-    bokeh:nth-child(77) {
-      background-color: #2bd8ff;
-      transform: translate(98.2271077883vw, 2.7210624524vh);
-      animation-duration: 3.3587160908s;
-      animation-delay: -4.435769073s;
-    }
-
-    bokeh:nth-child(78) {
-      background-color: #ef8d22;
-      transform: translate(82.4434608256vw, 9.0962389017vh);
-      animation-duration: 3.8483414715s;
-      animation-delay: -1.0694782347s;
-    }
-
-    bokeh:nth-child(79) {
-      background-color: #2bd8ff;
-      transform: translate(98.2654136151vw, 83.7523655632vh);
-      animation-duration: 4.1419003986s;
-      animation-delay: -1.9764953981s;
-    }
-
-    bokeh:nth-child(80) {
-      background-color: #fc85e1;
-      transform: translate(86.7186358745vw, 73.0676367298vh);
-      animation-duration: 2.4890966331s;
-      animation-delay: -0.4741379874s;
-    }
-
-    bokeh:nth-child(81) {
-      background-color: #fc85e1;
-      transform: translate(15.3220485202vw, 36.9832128128vh);
-      animation-duration: 3.995407162s;
-      animation-delay: -3.7744457779s;
-    }
-
-    bokeh:nth-child(82) {
-      background-color: #feff28;
-      transform: translate(91.6146273919vw, 40.6444773891vh);
-      animation-duration: 2.1658998309s;
-      animation-delay: -1.952373995s;
-    }
-
-    bokeh:nth-child(83) {
-      background-color: #feff28;
-      transform: translate(25.6507399106vw, 43.4526845177vh);
-      animation-duration: 3.4409697042s;
-      animation-delay: -2.0030107798s;
-    }
-
-    bokeh:nth-child(84) {
-      background-color: #fc85e1;
-      transform: translate(42.0976572753vw, 43.2568667967vh);
-      animation-duration: 2.3101567464s;
-      animation-delay: -1.7491800647s;
-    }
-
-    bokeh:nth-child(85) {
-      background-color: #ef8d22;
-      transform: translate(70.35369149vw, 35.0193717674vh);
-      animation-duration: 2.8018140781s;
-      animation-delay: -2.439169514s;
-    }
-
-    bokeh:nth-child(86) {
-      background-color: #ef8d22;
-      transform: translate(63.0514820087vw, 94.1690725709vh);
-      animation-duration: 3.7603555112s;
-      animation-delay: -2.2458160432s;
-    }
-
-    bokeh:nth-child(87) {
-      background-color: #ef8d22;
-      transform: translate(30.8923658633vw, 6.1507988452vh);
-      animation-duration: 3.8603200439s;
-      animation-delay: -2.2815024243s;
-    }
-
-    bokeh:nth-child(88) {
-      background-color: #fc85e1;
-      transform: translate(88.3652364239vw, 15.9016862067vh);
-      animation-duration: 2.2632380234s;
-      animation-delay: -4.9912290306s;
-    }
-
-    bokeh:nth-child(89) {
-      background-color: #fc85e1;
-      transform: translate(88.5809851234vw, 70.911010903vh);
-      animation-duration: 4.075252974s;
-      animation-delay: -2.3664757556s;
-    }
-
-    bokeh:nth-child(90) {
-      background-color: #fc85e1;
-      transform: translate(0.4140375379vw, 50.2727784599vh);
-      animation-duration: 4.6181858911s;
-      animation-delay: -3.6503385874s;
-    }
-
-    bokeh:nth-child(91) {
-      background-color: #fc85e1;
-      transform: translate(29.9299546482vw, 82.5719171401vh);
-      animation-duration: 2.1286725696s;
-      animation-delay: -2.3161439203s;
-    }
-
-    bokeh:nth-child(92) {
-      background-color: #2bd8ff;
-      transform: translate(58.350640452vw, 29.9499317658vh);
-      animation-duration: 2.4821674613s;
-      animation-delay: -1.6987795836s;
-    }
-
-    bokeh:nth-child(93) {
-      background-color: #ef8d22;
-      transform: translate(50.642476245vw, 68.3125043281vh);
-      animation-duration: 2.0229683575s;
-      animation-delay: -4.2234322223s;
-    }
-
-    bokeh:nth-child(94) {
-      background-color: #fc85e1;
-      transform: translate(58.7261528871vw, 65.2390476803vh);
-      animation-duration: 4.1995893273s;
-      animation-delay: -4.2561744278s;
-    }
-
-    bokeh:nth-child(95) {
-      background-color: #feff28;
-      transform: translate(71.7778667804vw, 41.6143362726vh);
-      animation-duration: 4.4884534009s;
-      animation-delay: -2.1482949406s;
-    }
-
-    bokeh:nth-child(96) {
-      background-color: #fc85e1;
-      transform: translate(54.0176292023vw, 78.8198774625vh);
-      animation-duration: 4.3541682522s;
-      animation-delay: -3.1668881397s;
-    }
-
-    bokeh:nth-child(97) {
-      background-color: #2bd8ff;
-      transform: translate(68.0969777674vw, 16.1002280533vh);
-      animation-duration: 3.1599695314s;
-      animation-delay: -0.8484943973s;
-    }
-
-    bokeh:nth-child(98) {
-      background-color: #ef8d22;
-      transform: translate(87.1953943864vw, 18.8625214541vh);
-      animation-duration: 4.0572958901s;
-      animation-delay: -2.8562307683s;
-    }
-
-    bokeh:nth-child(99) {
-      background-color: #ef8d22;
-      transform: translate(11.9162542977vw, 31.5767108025vh);
-      animation-duration: 4.4056687995s;
-      animation-delay: -2.6596195011s;
-    }
-
-    bokeh:nth-child(100) {
-      background-color: #ef8d22;
-      transform: translate(64.6990433218vw, 2.5228218889vh);
-      animation-duration: 4.7936838759s;
-      animation-delay: -2.1647212067s;
-    }
-
-    @keyframes explosion {
-      0% {
-        opacity: 0;
-      }
-
-      70% {
-        opacity: 1;
-      }
-
-      100% {
-        transform: translate(50vw, 100vh);
-      }
-    }
-
-    .box {
-      position: absolute;
-      height: 300px;
-      width: 100%;
-      left: 0;
-      right: 0;
-      margin: auto;
-      top: 0px;
-      pointer-events: none;
-      scale: 0.75;
-      opacity: 1;
-
-    }
-
-    .cake {
-      position: relative;
-      top: -150px;
-      margin: auto;
-      width: 200px;
-      height: 60px;
-      background: #f9fdff;
-      border-radius: 100%;
-      transform: translateZ(100px);
-      box-shadow: 0px 4px 0px #f4f9fd, 0px 8px 0px #dba9ff,
-        0px 12px 0px #fec3b3, 0px 16px 0px #f7f6fb, 0px 20px 0px #f7f6fb,
-        0px 24px 0px #f7f6fb, 0px 28px 0px #f7f6fb, 0px 32px 0px #fea0bb,
-        0px 36px 0px #fea0bb, 0px 40px 0px #9cef9d, 0px 44px 0px #9cef9d,
-        0px 48px 0px #f7f6fb, 0px 52px 0px #f7f6fb, 0px 56px 0px #f7f6fb,
-        0px 60px 0px #f7f6fb, 0px 64px 0px #f7f6fb, 0px 68px 0px #dfa5fc,
-        0px 72px 0px #dfa5fc, 0px 76px 0px #fafffe, 0px 80px 0px #fafffe;
-    }
-
-    .plate {
-      position: relative;
-      height: 90px;
-      width: 300px;
-      left: 50%;
-      margin-left: -150px;
-      border-radius: 100%;
-      background: radial-gradient(ellipse closest-side at center,
-          #08c7fe 0%,
-          #04d7f2 71%,
-          #02ffd0 100%);
-      box-shadow: 0px 3px 0px #00e2e1, 0px 6px 0px #00d3fb;
-      transform: translateZ(80px);
-    }
-
-    .candle {
-      position: relative;
-      height: 50px;
-      top: -220px;
-      width: 12px;
-      margin: auto;
-      background: linear-gradient(0deg, #b7f4a7 0%, white 100%);
-      border-radius: 4px;
-      transform: translateZ(120px);
-    }
-
-    .candlet {
-      position: fixed;
-      height: 5px;
-      top: 0px;
-      opacity: 1;
-    }
-
-    #flame {
-      position: absolute;
-      z-index: 10;
-    }
-
-    .lit {
-      background: linear-gradient(to bottom, #fff6d9, #fbc36c);
-      width: 15px;
-      height: 35px;
-      /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
-      border-top-left-radius: 10px 35px;
-      border-top-right-radius: 10px 35px;
-      border-bottom-right-radius: 10px 10px;
-      border-bottom-left-radius: 10px 10px;
-      top: -34px;
-      margin: auto;
-      /*   http://www.css3.info/preview/box-shadow/ */
-      box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
-      transform-origin: bottom;
-      pointer-events: none;
-
-      animation: flicker 1s ease-in-out alternate infinite;
-    }
-
-    @keyframes flicker {
-      0% {
-        transform: skewX(5deg);
-        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
-      }
-
-      25% {
-        transform: skewX(-5deg);
-        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
-      }
-
-      50% {
-        transform: skewX(10deg);
-        box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
-      }
-
-      75% {
-        transform: skewX(-10deg);
-        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
-      }
-
-      100% {
-        transform: skewX(5deg);
-        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
-      }
-    }
-
-    .pyro>.before,
-    .pyro>.after {
-      position: fixed;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
-        0 0 #fff, 0 0 #fff, 0 0 #fff;
-      -moz-animation: 1s bang ease-out infinite backwards,
-        1s gravity ease-in infinite backwards,
-        5s position linear infinite backwards;
-      -webkit-animation: 1s bang ease-out infinite backwards,
-        1s gravity ease-in infinite backwards,
-        5s position linear infinite backwards;
-      -o-animation: 1s bang ease-out infinite backwards,
-        1s gravity ease-in infinite backwards,
-        5s position linear infinite backwards;
-      -ms-animation: 1s bang ease-out infinite backwards,
-        1s gravity ease-in infinite backwards,
-        5s position linear infinite backwards;
-      animation: 1s bang ease-out infinite backwards,
-        1s gravity ease-in infinite backwards,
-        5s position linear infinite backwards;
-    }
-
-    .pyro>.after {
-      -moz-animation-delay: 1.25s, 1.25s, 1.25s;
-      -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
-      -o-animation-delay: 1.25s, 1.25s, 1.25s;
-      -ms-animation-delay: 1.25s, 1.25s, 1.25s;
-      animation-delay: 1.25s, 1.25s, 1.25s;
-      -moz-animation-duration: 1.25s, 1.25s, 6.25s;
-      -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
-      -o-animation-duration: 1.25s, 1.25s, 6.25s;
-      -ms-animation-duration: 1.25s, 1.25s, 6.25s;
-      animation-duration: 1.25s, 1.25s, 6.25s;
-    }
-
-    @-webkit-keyframes bang {
-      to {
-        box-shadow: -116px 70.3333333333px #ff9500,
-          -249px -169.6666666667px #00ff44, -89px -194.6666666667px #ff001e,
-          222px 31.3333333333px #00ff66, -69px -384.6666666667px #ff1e00,
-          -145px -198.6666666667px #ddff00, 13px -60.6666666667px #fff700,
-          -131px -339.6666666667px #ff00a6, -161px 39.3333333333px #00ff1e,
-          -8px -97.6666666667px #5500ff, -6px 39.3333333333px aqua,
-          13px -179.6666666667px #6aff00, 202px -265.6666666667px #ff00ee,
-          -216px -115.6666666667px red, 168px 80.3333333333px #008cff,
-          -144px -42.6666666667px #0080ff, -206px -272.6666666667px #99ff00,
-          60px -278.6666666667px #ff00ea, 114px -338.6666666667px #ff008c,
-          -44px -81.6666666667px #ffc800, 75px -7.6666666667px #00ff66,
-          -7px -226.6666666667px #00ffbb, -88px -313.6666666667px #3c00ff,
-          142px -319.6666666667px #ff0044, -135px -242.6666666667px #0d00ff,
-          103px -303.6666666667px #ff6600, 234px -34.6666666667px #c800ff,
-          224px -354.6666666667px #ff00c8, -87px -15.6666666667px #00ffe1,
-          232px 38.3333333333px #a200ff, 226px -144.6666666667px #002fff,
-          160px 63.3333333333px #ff000d, 211px -305.6666666667px yellow,
-          -167px -42.6666666667px #6a00ff, -232px 49.3333333333px #ff1a00,
-          115px -242.6666666667px #ff00cc, 36px -362.6666666667px #4400ff,
-          160px -136.6666666667px #ff0022, 6px -316.6666666667px #ff7b00,
-          238px 47.3333333333px #ff0066, 221px -320.6666666667px #3700ff,
-          181px -414.6666666667px #4800ff, 226px 46.3333333333px #77ff00,
-          -159px -366.6666666667px #ff005e, 13px -177.6666666667px #ff00b3,
-          -110px -232.6666666667px #ffee00, 42px -396.6666666667px #5500ff,
-          154px -407.6666666667px #ff0077, 131px -19.6666666667px #0084ff,
-          179px -254.6666666667px #002fff, -226px -31.6666666667px #4d00ff;
-      }
-    }
-
-    @-moz-keyframes bang {
-      to {
-        box-shadow: -116px 70.3333333333px #ff9500,
-          -249px -169.6666666667px #00ff44, -89px -194.6666666667px #ff001e,
-          222px 31.3333333333px #00ff66, -69px -384.6666666667px #ff1e00,
-          -145px -198.6666666667px #ddff00, 13px -60.6666666667px #fff700,
-          -131px -339.6666666667px #ff00a6, -161px 39.3333333333px #00ff1e,
-          -8px -97.6666666667px #5500ff, -6px 39.3333333333px aqua,
-          13px -179.6666666667px #6aff00, 202px -265.6666666667px #ff00ee,
-          -216px -115.6666666667px red, 168px 80.3333333333px #008cff,
-          -144px -42.6666666667px #0080ff, -206px -272.6666666667px #99ff00,
-          60px -278.6666666667px #ff00ea, 114px -338.6666666667px #ff008c,
-          -44px -81.6666666667px #ffc800, 75px -7.6666666667px #00ff66,
-          -7px -226.6666666667px #00ffbb, -88px -313.6666666667px #3c00ff,
-          142px -319.6666666667px #ff0044, -135px -242.6666666667px #0d00ff,
-          103px -303.6666666667px #ff6600, 234px -34.6666666667px #c800ff,
-          224px -354.6666666667px #ff00c8, -87px -15.6666666667px #00ffe1,
-          232px 38.3333333333px #a200ff, 226px -144.6666666667px #002fff,
-          160px 63.3333333333px #ff000d, 211px -305.6666666667px yellow,
-          -167px -42.6666666667px #6a00ff, -232px 49.3333333333px #ff1a00,
-          115px -242.6666666667px #ff00cc, 36px -362.6666666667px #4400ff,
-          160px -136.6666666667px #ff0022, 6px -316.6666666667px #ff7b00,
-          238px 47.3333333333px #ff0066, 221px -320.6666666667px #3700ff,
-          181px -414.6666666667px #4800ff, 226px 46.3333333333px #77ff00,
-          -159px -366.6666666667px #ff005e, 13px -177.6666666667px #ff00b3,
-          -110px -232.6666666667px #ffee00, 42px -396.6666666667px #5500ff,
-          154px -407.6666666667px #ff0077, 131px -19.6666666667px #0084ff,
-          179px -254.6666666667px #002fff, -226px -31.6666666667px #4d00ff;
-      }
-    }
-
-    @-o-keyframes bang {
-      to {
-        box-shadow: -116px 70.3333333333px #ff9500,
-          -249px -169.6666666667px #00ff44, -89px -194.6666666667px #ff001e,
-          222px 31.3333333333px #00ff66, -69px -384.6666666667px #ff1e00,
-          -145px -198.6666666667px #ddff00, 13px -60.6666666667px #fff700,
-          -131px -339.6666666667px #ff00a6, -161px 39.3333333333px #00ff1e,
-          -8px -97.6666666667px #5500ff, -6px 39.3333333333px aqua,
-          13px -179.6666666667px #6aff00, 202px -265.6666666667px #ff00ee,
-          -216px -115.6666666667px red, 168px 80.3333333333px #008cff,
-          -144px -42.6666666667px #0080ff, -206px -272.6666666667px #99ff00,
-          60px -278.6666666667px #ff00ea, 114px -338.6666666667px #ff008c,
-          -44px -81.6666666667px #ffc800, 75px -7.6666666667px #00ff66,
-          -7px -226.6666666667px #00ffbb, -88px -313.6666666667px #3c00ff,
-          142px -319.6666666667px #ff0044, -135px -242.6666666667px #0d00ff,
-          103px -303.6666666667px #ff6600, 234px -34.6666666667px #c800ff,
-          224px -354.6666666667px #ff00c8, -87px -15.6666666667px #00ffe1,
-          232px 38.3333333333px #a200ff, 226px -144.6666666667px #002fff,
-          160px 63.3333333333px #ff000d, 211px -305.6666666667px yellow,
-          -167px -42.6666666667px #6a00ff, -232px 49.3333333333px #ff1a00,
-          115px -242.6666666667px #ff00cc, 36px -362.6666666667px #4400ff,
-          160px -136.6666666667px #ff0022, 6px -316.6666666667px #ff7b00,
-          238px 47.3333333333px #ff0066, 221px -320.6666666667px #3700ff,
-          181px -414.6666666667px #4800ff, 226px 46.3333333333px #77ff00,
-          -159px -366.6666666667px #ff005e, 13px -177.6666666667px #ff00b3,
-          -110px -232.6666666667px #ffee00, 42px -396.6666666667px #5500ff,
-          154px -407.6666666667px #ff0077, 131px -19.6666666667px #0084ff,
-          179px -254.6666666667px #002fff, -226px -31.6666666667px #4d00ff;
-      }
-    }
-
-    @-ms-keyframes bang {
-      to {
-        box-shadow: -116px 70.3333333333px #ff9500,
-          -249px -169.6666666667px #00ff44, -89px -194.6666666667px #ff001e,
-          222px 31.3333333333px #00ff66, -69px -384.6666666667px #ff1e00,
-          -145px -198.6666666667px #ddff00, 13px -60.6666666667px #fff700,
-          -131px -339.6666666667px #ff00a6, -161px 39.3333333333px #00ff1e,
-          -8px -97.6666666667px #5500ff, -6px 39.3333333333px aqua,
-          13px -179.6666666667px #6aff00, 202px -265.6666666667px #ff00ee,
-          -216px -115.6666666667px red, 168px 80.3333333333px #008cff,
-          -144px -42.6666666667px #0080ff, -206px -272.6666666667px #99ff00,
-          60px -278.6666666667px #ff00ea, 114px -338.6666666667px #ff008c,
-          -44px -81.6666666667px #ffc800, 75px -7.6666666667px #00ff66,
-          -7px -226.6666666667px #00ffbb, -88px -313.6666666667px #3c00ff,
-          142px -319.6666666667px #ff0044, -135px -242.6666666667px #0d00ff,
-          103px -303.6666666667px #ff6600, 234px -34.6666666667px #c800ff,
-          224px -354.6666666667px #ff00c8, -87px -15.6666666667px #00ffe1,
-          232px 38.3333333333px #a200ff, 226px -144.6666666667px #002fff,
-          160px 63.3333333333px #ff000d, 211px -305.6666666667px yellow,
-          -167px -42.6666666667px #6a00ff, -232px 49.3333333333px #ff1a00,
-          115px -242.6666666667px #ff00cc, 36px -362.6666666667px #4400ff,
-          160px -136.6666666667px #ff0022, 6px -316.6666666667px #ff7b00,
-          238px 47.3333333333px #ff0066, 221px -320.6666666667px #3700ff,
-          181px -414.6666666667px #4800ff, 226px 46.3333333333px #77ff00,
-          -159px -366.6666666667px #ff005e, 13px -177.6666666667px #ff00b3,
-          -110px -232.6666666667px #ffee00, 42px -396.6666666667px #5500ff,
-          154px -407.6666666667px #ff0077, 131px -19.6666666667px #0084ff,
-          179px -254.6666666667px #002fff, -226px -31.6666666667px #4d00ff;
-      }
-    }
-
-    @keyframes bang {
-      to {
-        box-shadow: -116px 70.3333333333px #ff9500,
-          -249px -169.6666666667px #00ff44, -89px -194.6666666667px #ff001e,
-          222px 31.3333333333px #00ff66, -69px -384.6666666667px #ff1e00,
-          -145px -198.6666666667px #ddff00, 13px -60.6666666667px #fff700,
-          -131px -339.6666666667px #ff00a6, -161px 39.3333333333px #00ff1e,
-          -8px -97.6666666667px #5500ff, -6px 39.3333333333px aqua,
-          13px -179.6666666667px #6aff00, 202px -265.6666666667px #ff00ee,
-          -216px -115.6666666667px red, 168px 80.3333333333px #008cff,
-          -144px -42.6666666667px #0080ff, -206px -272.6666666667px #99ff00,
-          60px -278.6666666667px #ff00ea, 114px -338.6666666667px #ff008c,
-          -44px -81.6666666667px #ffc800, 75px -7.6666666667px #00ff66,
-          -7px -226.6666666667px #00ffbb, -88px -313.6666666667px #3c00ff,
-          142px -319.6666666667px #ff0044, -135px -242.6666666667px #0d00ff,
-          103px -303.6666666667px #ff6600, 234px -34.6666666667px #c800ff,
-          224px -354.6666666667px #ff00c8, -87px -15.6666666667px #00ffe1,
-          232px 38.3333333333px #a200ff, 226px -144.6666666667px #002fff,
-          160px 63.3333333333px #ff000d, 211px -305.6666666667px yellow,
-          -167px -42.6666666667px #6a00ff, -232px 49.3333333333px #ff1a00,
-          115px -242.6666666667px #ff00cc, 36px -362.6666666667px #4400ff,
-          160px -136.6666666667px #ff0022, 6px -316.6666666667px #ff7b00,
-          238px 47.3333333333px #ff0066, 221px -320.6666666667px #3700ff,
-          181px -414.6666666667px #4800ff, 226px 46.3333333333px #77ff00,
-          -159px -366.6666666667px #ff005e, 13px -177.6666666667px #ff00b3,
-          -110px -232.6666666667px #ffee00, 42px -396.6666666667px #5500ff,
-          154px -407.6666666667px #ff0077, 131px -19.6666666667px #0084ff,
-          179px -254.6666666667px #002fff, -226px -31.6666666667px #4d00ff;
-      }
-    }
-
-    @-webkit-keyframes gravity {
-      to {
-        transform: translateY(200px);
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        opacity: 0;
-      }
-    }
-
-    @-moz-keyframes gravity {
-      to {
-        transform: translateY(200px);
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        opacity: 0;
-      }
-    }
-
-    @-o-keyframes gravity {
-      to {
-        transform: translateY(200px);
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        opacity: 0;
-      }
-    }
-
-    @-ms-keyframes gravity {
-      to {
-        transform: translateY(200px);
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes gravity {
-      to {
-        transform: translateY(200px);
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        opacity: 0;
-      }
-    }
-
-    @-webkit-keyframes position {
-
-      0%,
-      19.9% {
-        margin-top: 10%;
-        margin-left: 40%;
-      }
-
-      20%,
-      39.9% {
-        margin-top: 40%;
-        margin-left: 30%;
-      }
-
-      40%,
-      59.9% {
-        margin-top: 20%;
-        margin-left: 70%;
-      }
-
-      60%,
-      79.9% {
-        margin-top: 30%;
-        margin-left: 20%;
-      }
-
-      80%,
-      99.9% {
-        margin-top: 30%;
-        margin-left: 80%;
-      }
-    }
-
-    @-moz-keyframes position {
-
-      0%,
-      19.9% {
-        margin-top: 10%;
-        margin-left: 40%;
-      }
-
-      20%,
-      39.9% {
-        margin-top: 40%;
-        margin-left: 30%;
-      }
-
-      40%,
-      59.9% {
-        margin-top: 20%;
-        margin-left: 70%;
-      }
-
-      60%,
-      79.9% {
-        margin-top: 30%;
-        margin-left: 20%;
-      }
-
-      80%,
-      99.9% {
-        margin-top: 30%;
-        margin-left: 80%;
-      }
-    }
-
-    @-o-keyframes position {
-
-      0%,
-      19.9% {
-        margin-top: 10%;
-        margin-left: 40%;
-      }
-
-      20%,
-      39.9% {
-        margin-top: 40%;
-        margin-left: 30%;
-      }
-
-      40%,
-      59.9% {
-        margin-top: 20%;
-        margin-left: 70%;
-      }
-
-      60%,
-      79.9% {
-        margin-top: 30%;
-        margin-left: 20%;
-      }
-
-      80%,
-      99.9% {
-        margin-top: 30%;
-        margin-left: 80%;
-      }
-    }
-
-    @-ms-keyframes position {
-
-      0%,
-      19.9% {
-        margin-top: 10%;
-        margin-left: 40%;
-      }
-
-      20%,
-      39.9% {
-        margin-top: 40%;
-        margin-left: 30%;
-      }
-
-      40%,
-      59.9% {
-        margin-top: 20%;
-        margin-left: 70%;
-      }
-
-      60%,
-      79.9% {
-        margin-top: 30%;
-        margin-left: 20%;
-      }
-
-      80%,
-      99.9% {
-        margin-top: 30%;
-        margin-left: 80%;
-      }
-    }
-
-    @keyframes position {
-
-      0%,
-      19.9% {
-        margin-top: 10%;
-        margin-left: 40%;
-      }
-
-      20%,
-      39.9% {
-        margin-top: 40%;
-        margin-left: 30%;
-      }
-
-      40%,
-      59.9% {
-        margin-top: 20%;
-        margin-left: 70%;
-      }
-
-      60%,
-      79.9% {
-        margin-top: 30%;
-        margin-left: 20%;
-      }
-
-      80%,
-      99.9% {
-        margin-top: 30%;
-        margin-left: 80%;
-      }
-    }
-
-    .sakura {
-      position: absolute;
-      top: -30px;
-      z-index: 1;
-      pointer-events: none;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10%);
-      }
-
-      100% {
-        transform: translateY(110vh);
-      }
-    }
-
-    canvas {
-      display: block;
-      z-index: 1;
-      background: linear-gradient(to right,
-          #e2b8f7,
-          #d4bafa,
-          #c7bcfb,
-          #b9befb,
-          #acbff9);
-    }
-
-    #message {
-      position: relative;
-      top: -80px;
-      width: 100%;
-      text-align: center;
-      pointer-events: none;
-
-      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
-      z-index: 0;
-      font-family: "Arial", sans-serif;
-      letter-spacing: 0.5rem;
-      font-size: 40px;
-      font-weight: 900;
-      background-image: -webkit-linear-gradient(left,
-          #2abce0,
-          #e6d205 25%,
-          #147b96 50%,
-          #e6d205 75%,
-          rgb(55, 172, 226));
-      -webkit-text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-background-size: 200% 100%;
-      -webkit-animation: maskedAnimation 4s infinite linear;
-    }
-
-    @keyframes maskedAnimation {
-      0% {
-        background-position: 0 0;
-      }
-
-      100% {
-        background-position: -100% 0;
-      }
-    }
-
-    .second-line {
-      position: relative;
-      top: -50px;
-      width: 100%;
-      text-align: center;
-      pointer-events: none;
-    }
-
-    /* 第二段每个字逐个淡入 */
-    .second-line i {
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      color: white;
-      font-size: 28px;
-      text-shadow: 0 0 10px rgb(231, 69, 231), 0 0 20px rgb(226, 120, 226),
-        0 0 30px rgb(231, 69, 231), 0 0 40px rgb(233, 172, 233);
-      animation-delay: calc(7s + var(--i) * 0.3s);
-      /* 等第一段淡入后再开始逐字淡入 */
-      display: inline-block;
-    }
-
-    #lovetext {
-      position: absolute;
-      height: 70%;
-      width: 70%;
-      left: 0;
-      right: 0;
-      margin: auto;
-      top: 20%;
-      pointer-events: none;
-      color: white;
-      font-size: 18px;
-      font-family: 'sans-serif';
-
-      /* text-shadow: 0 0 10px rgb(231, 69, 231), 0 0 20px rgb(226, 120, 226),
-          0 0 30px rgb(231, 69, 231), 0 0 40px rgb(233, 172, 233); */
-    }
-
-    .lovetext i {
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      animation-delay: calc(var(--x) * 0.25s);
-      display: inline-block;
-    }
-
-    .happy {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      height: 40px;
-      font-size: 20px;
-      color: violet;
-
-    }
-
-    #happytext {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      height: 40px;
-      font-size: 18px;
-      font-weight: 500;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-      color: rgb(130, 207, 238);
-    }
-
-    #happynum {
-      font-size: 40px;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    #agree {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      padding: 10px 20px;
-      background-color: #46cef0;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-
-    }
-
-    #disagree {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: #dd2828;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>登录:微信公众号AlbertYang</title>
+    <style>
+        /* 清除浏览器默认边距，
+使边框和内边距的值包含在元素的width和height内 */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 使用flex布局，让内容垂直和水平居中 */
+
+        section {
+            /* 相对定位 */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片 */
+            background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+        }
+
+        /* 背景颜色 */
+
+        section .color {
+            /* 绝对定位 */
+            position: absolute;
+            /* 使用filter(滤镜) 属性，给图像设置高斯模糊*/
+            filter: blur(200px);
+        }
+
+        /* :nth-child(n) 选择器匹配父元素中的第 n 个子元素 */
+
+        section .color:nth-child(1) {
+            top: -350px;
+            width: 600px;
+            height: 600px;
+            background: #ff359b;
+        }
+
+        section .color:nth-child(2) {
+            bottom: -150px;
+            left: 100px;
+            width: 500px;
+            height: 500px;
+            background: #fffd87;
+        }
+
+        section .color:nth-child(3) {
+            bottom: 50px;
+            right: 100px;
+            width: 500px;
+            height: 500px;
+            background: #00d2ff;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        /* 背景圆样式 */
+
+        .box .circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            /* backdrop-filter属性为一个元素后面区域添加模糊效果 */
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            /* 使用filter(滤镜) 属性，改变颜色。
+    hue-rotate(deg)  给图像应用色相旋转 
+    calc() 函数用于动态计算长度值 
+    var() 函数调用自定义的CSS属性值x*/
+            filter: hue-rotate(calc(var(--x) * 70deg));
+            /* 调用动画animate，需要10s完成动画，
+    linear表示动画从头到尾的速度是相同的，
+    infinite指定动画应该循环播放无限次*/
+            animation: animate 10s linear infinite;
+            /* 动态计算动画延迟几秒播放 */
+            animation-delay: calc(var(--x) * -1s);
+        }
+
+        /* 背景圆动画 */
+
+        @keyframes animate {
+
+            0%,
+            100% {
+                transform: translateY(-50px);
+            }
+
+            50% {
+                transform: translateY(50px);
+            }
+        }
+
+        .box .circle:nth-child(1) {
+            top: -50px;
+            right: -60px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .box .circle:nth-child(2) {
+            top: 150px;
+            left: -100px;
+            width: 120px;
+            height: 120px;
+            z-index: 2;
+        }
+
+        .box .circle:nth-child(3) {
+            bottom: 50px;
+            right: -60px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+        }
+
+        .box .circle:nth-child(4) {
+            bottom: -80px;
+            left: 100px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .box .circle:nth-child(5) {
+            top: -80px;
+            left: 140px;
+            width: 60px;
+            height: 60px;
+        }
+
+        /* 登录框样式 */
+
+        .container {
+            position: relative;
+            width: 400px;
+            min-height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+        }
+
+        /* 登录标题样式 */
+
+        .form h2 {
+            position: relative;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        /* 登录标题的下划线样式 */
+
+        .form h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0px;
+            height: 3px;
+            background: #fff;
+            transition: 0.5s;
+        }
+
+        .form h2:hover:before {
+            width: 53px;
+        }
+
+        .form .inputBox {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* 输入框样式 */
+
+        .form .inputBox input {
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            border: none;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form .inputBox input::placeholder {
+            color: #fff;
+        }
+
+        /* 登录按钮样式 */
+
+        .form .inputBox input[type="submit"] {
+            background: #fff;
+            color: #666;
+            max-width: 120px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .enter {
+            width: 110px;
+            margin-top: 10px;
+            text-align: center;
+            padding: 10px 20px;
+            background: #00d2ff;
+            border-radius: 15px;
+            color: #fff;
+        }
+
+        .forget {
+            margin-top: 6px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .forget a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <bokeh></bokeh>
-  <audio id="bgm" src="./1.mp3" preload="auto" loop></audio>
-  <canvas id="canvas"></canvas>
-  <span class="candlet" id="candlet">🎉</span>
+    <section>
+        <!-- 背景颜色 -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <!-- 背景圆 -->
+            <div class="circle" style="--x:0"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
+            <!-- 登录框 -->
+            <div class="container">
+                <div class="form">
+                    <h2>输入魔法祝福🔑</h2>
+                    <form>
+                        <div class="inputBox">
+                            <input id="magic" type="text" placeholder="请输入魔法祝福咒语哦">
+                        </div>
+                        <div class="enter" id="magic" onclick="enter()">进入查看</div>
 
-  <div class="pyro">
-    <div class="before"></div>
-    <div class="after"></div>
-  </div>
+                        <p class="forget" id="forget"> </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let en = false
+        function enter() {
+            const value = document.getElementById('magic').value
+            console.log('value', value);
+            const m = document.getElementById('forget')
+            if (value) {
+                if (!en) {
+                    en = true
+                    if (value == 'ILOVEYOU') {
+                        m.innerHTML = '很有魔力的祝福咒语呢'
+                        m.style.color = 'pink'
+                    } else {
+                        m.innerHTML = '咒语魔力还差点'
+                        m.style.color = '#fec086'
+                    }
+                    setTimeout(() => {
+                        window.location.href = './1.html'
+                    }, 1000);
+                }
 
-  <div class="box" id="box">
-    <h2>Happy Birthday</h2>
+            } else {
+                m.innerHTML = '没看到魔法祝福哎(⊙o⊙)'
 
-    <div class="plate"></div>
-    <div class="cake"></div>
-    <div class="candle">
-      <div id="flame" class="lit"></div>
-    </div>
-    <div id="message"></div>
-    <div class="second-line" id="blessing"></div>
-  </div>
-  <div class="happy">
-    <div class="t" id="todayHappy">今日开心值:</div>
-    <div id="happynum">0</div>
-  </div>
-  <div id="happytext">
-  </div>
-  <div id="lovetext" class="lovetext"></div>
-  <div id="agree">我同意</div>
-
-  <div id="disagree">不同意</div>
-
-  <script>
-    // 背景音乐自动播放（用户首次点击触发）
-    const bgm = document.getElementById('bgm');
-    const bokehs = document.getElementsByTagName('bokeh');
-
-    const box = document.getElementById('box');
-    const candlet = document.getElementById('candlet');
-
-    let happynum = 0
-    const happynumHtMl = document.getElementById("happynum");
-    const happytext = document.getElementById("happytext");
-
-    let sakuraText = '&#x1F338'
-    function createSakura() {
-      const sakura = document.createElement("div");
-      sakura.className = "sakura";
-      sakura.style.color = 'pink'
-      const left = Math.random() * window.innerWidth;
-      const animationDuration = Math.random() * 4 + 3;
-
-      sakura.style.left = `${left}px`;
-      sakura.style.animationDuration = `${animationDuration}s`;
-
-      sakura.innerHTML = sakuraText
-
-      document.body.appendChild(sakura);
-
-      sakura.addEventListener("animationend", () => {
-        sakura.parentNode.removeChild(sakura);
-      });
-    }
-
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    let W = window.innerWidth;
-    let H = window.innerHeight;
-    canvas.width = W;
-    canvas.height = H;
-
-    window.addEventListener("resize", () => {
-      W = window.innerWidth;
-      H = window.innerHeight;
-      canvas.width = W;
-      canvas.height = H;
-    });
-
-    const fireworks = [];
-    const particles = [];
-    const staticParticles = [];
-
-    class Firework {
-      constructor(x, y, targetX, targetY, finalExplosion = false) {
-        this.x = x;
-        this.y = y;
-        this.targetX = targetX;
-        this.targetY = targetY;
-        this.finalExplosion = finalExplosion;
-        this.speed = 5;
-        this.angle = Math.atan2(targetY - y, targetX - x);
-        this.distance = Math.hypot(targetX - x, targetY - y);
-        this.traveled = 0;
-      }
-
-      update(i) {
-        const vx = Math.cos(this.angle) * this.speed;
-        const vy = Math.sin(this.angle) * this.speed;
-        this.x += vx;
-        this.y += vy;
-        this.traveled += this.speed;
-        if (this.traveled >= this.distance) {
-          fireworks.splice(i, 1);
-          if (this.finalExplosion) {
-            explodeText(this.targetX, this.targetY);
-          } else {
-            explode(this.targetX, this.targetY);
-          }
-        }
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "white";
-        ctx.fill();
-      }
-    }
-
-    class Particle {
-      constructor(x, y, color = "white", alphaDecay = 0.015) {
-        this.x = x;
-        this.y = y;
-        this.radius = Math.random() * 2 + 1;
-        this.speed = Math.random() * 5 + 1;
-        this.angle = Math.random() * Math.PI * 2;
-        this.vx = Math.cos(this.angle) * this.speed;
-        this.vy = Math.sin(this.angle) * this.speed;
-        this.gravity = 0.05;
-        this.alpha = 1;
-        this.color = color;
-        this.alphaDecay = alphaDecay;
-      }
-
-      update(i) {
-        this.vx *= 0.98;
-        this.vy *= 0.98;
-        this.vy += this.gravity;
-        this.x += this.vx;
-        this.y += this.vy;
-        this.alpha -= this.alphaDecay;
-        if (this.alpha <= 0) {
-          particles.splice(i, 1);
-        }
-      }
-
-      draw() {
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    function explode(x, y) {
-      const colors = ["#ff4d4d", "#ffcc00", "#66ff66", "#66ccff", "#cc66ff"];
-      for (let i = 0; i < 100; i++) {
-        particles.push(
-          new Particle(
-            x,
-            y,
-            colors[Math.floor(Math.random() * colors.length)]
-          )
-        );
-      }
-    }
-
-    function explodeText(x, y) {
-      const canvas = document.getElementById("message");
-      canvas.innerHTML = "祝张艳丽生日快乐！";
-      canvas.style.opacity = "0";
-      canvas.style.animation = "fadeIn 2s ease forwards";
-      canvas.style.animationDelay = "0s";
-      setTimeout(() => {
-        canvas.style.opacity = "1";
-        canvas.style.animation = "maskedAnimation 4s infinite linear";
-        setInterval(createSakura, 500);
-      }, 1500);
-    }
-
-    // 你可以在这里修改祝福语
-    const blessingText = "祝你天天开心，永远美丽！♡";
-
-    const container = document.getElementById("blessing");
-
-    [...blessingText].forEach((char, index) => {
-      const span = document.createElement("i");
-      span.textContent = char;
-      span.style.setProperty("--i", index);
-      container.appendChild(span);
-    });
-
-    function animate() {
-      requestAnimationFrame(animate);
-      // ctx.fillStyle = "rgba(136, 203, 246, 0.1)";
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop(0, "#e2b8f7");
-      gradient.addColorStop(0.25, "#d4bafa");
-      gradient.addColorStop(0.5, "#c7bcfb");
-      gradient.addColorStop(0.75, "#b9befb");
-      gradient.addColorStop(1, "#acbff9");
-
-      // 用渐变填充背景
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, W, H);
-
-      fireworks.forEach((f, i) => {
-        f.update(i);
-        f.draw();
-      });
-
-      particles.forEach((p, i) => {
-        p.update(i);
-        p.draw();
-      });
-    }
-    let textlist = ['哇！你太幸福了', '快乐的小仙女一枚鸭~', '给快乐加加油', '有张力，既鲜艳，又美丽', ' 今日快乐值爆棚！！！', '你好像又年轻了一岁', '我太喜欢你了❤', '你真棒👍', '快乐还能多一点嘛', '厉害，好崇拜你哦']
-    let count = 0;
-    let lastThreshold = 0;
-    // 自动烟花 + 最后一发为字形
-    let fireCount = 0;
-    const autoFire = setInterval(() => {
-      if (fireCount < 4) {
-        const x = Math.random() * W;
-        const y = (Math.random() * H) / 2;
-        fireworks.push(new Firework(W / 2, H, x, y));
-      } else if (fireCount === 4) {
-        fireworks.push(new Firework(W / 2, H, W / 2, H / 2 - 50, true));
-        clearInterval(autoFire);
-      }
-      fireCount++;
-      happynum += fireworks.length * 10
-      happynumHtMl.innerHTML = happynum
-      onIncrease(happynum);
-
-    }, 500);
-
-    // 点击触发额外烟花
-    canvas.addEventListener("click", (e) => {
-      fireworks.push(new Firework(W / 2, H, e.clientX, e.clientY));
-      happynum += fireworks.length * 10
-      happynumHtMl.innerHTML = happynum
-      onIncrease(happynum);
-    });
-    // iOS 需要用户交互才能播放，所以监听首次点击页面
-    function tryPlayBGM() {
-      bgm.play().catch(() => { }); // 捕获错误避免警告
-      window.removeEventListener('click', tryPlayBGM);
-    }
-    window.addEventListener('click', tryPlayBGM);
-
-    // 可选：自动尝试播放（桌面浏览器可能能成功）
-    setTimeout(() => {
-      bgm.play().catch(() => { });
-    }, 1000);
-    let show = false
-    function onIncrease(value) {
-      const currentThreshold = Math.floor(value / 500);
-      if (currentThreshold > lastThreshold) {
-        lastThreshold = currentThreshold;
-        happytext.innerHTML = value > 500 ? textlist[currentThreshold % 10] : ""
-        happytext.style.color = getColor()
-        console.log('value', value);
-
-        if (value > 5000 && !show) {
-          show = true
-          sakuraText = '❤'
-          document.querySelectorAll('.sakura').forEach(el => {
-            el.innerHTML = sakuraText;
-          });
-          bgm.pause()
-          bgm.src = './2.mp3'
-          bgm.play()
-          box.style.transition = 'opacity 2s ease-in-out'
-          candlet.style.transition = 'opacity 2s ease-in-out'
-          box.style.opacity = '0'
-          candlet.style.opacity = '0'
-          for (let i = 0; i < bokehs.length; i++) {
-            const e = bokehs[i];
-            e.style.display = 'none'
-          }
-          // 你可以在这里修改祝福语
-          const c = ''
-          const blessingText = "亲爱的张艳丽，我常常在想能遇到像你这样的人是多么珍贵，有些感受越来越清晰，你是一个好女人，你外表柔和内心坚定，有自己的主见，跟你交流起来舒服；你很善良，会为其他人考虑懂得聆听他人理解他人的感受；你的声音像一个和蔼可亲的老师，我听了你的声音感到无比温馨......我必须认真地把心意告诉你，我喜欢你♡，我想和你在一起，想看见你的样子听见你的声音，想牵着你的手...如果你想好了同意成为男女朋友那么就请告诉我吧";
-          const agreeText = '太好了，我也同意，我们在一起吧'
-          const agree = document.getElementById("agree");
-          const disagree = document.getElementById("disagree");
-          const todayHappy = document.getElementById("todayHappy");
-          todayHappy.innerHTML = '今日幸福指数:'
-          const container = document.getElementById("lovetext");
-          let isagree = false;
-          [...blessingText].forEach((char, index) => {
-            const span = document.createElement("i");
-            span.textContent = char;
-            span.style.setProperty("--x", index);
-            container.appendChild(span);
-          });
-          setTimeout(() => {
-            agree.style.opacity = 1
-            disagree.style.opacity = 1
-          }, 1000 * blessingText.length * 0.25)
-          agree.addEventListener("click", (e) => {
-            if (!isagree) {
-              isagree = true;
-              disagree.style.display = 'none';
-              const br = document.createElement("br");
-              container.appendChild(br);
-
-              [...agreeText].forEach((char, index) => {
-                const span = document.createElement("i");
-                span.textContent = char;
-                span.style.setProperty("--x", index);
-                span.style.textShadow = `0 0 10px rgb(231, 69, 231), 0 0 20px rgb(226, 120, 226), 0 0 30px rgb(231, 69, 231), 0 0 40px rgb(233, 172, 233)`
-                container.appendChild(span);
-              });
             }
 
-          })
-          disagree.addEventListener("click", (e) => {
-            e.preventDefault();
-            moveButton();
-          })
-
         }
-      }
-    }
-    let attempts = 0;
-    function moveButton() {
-      const buttonWidth = disagree.offsetWidth;
-      const buttonHeight = disagree.offsetHeight;
-
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-
-      // 计算安全区域（确保按钮完全可见）
-      const maxX = windowWidth - buttonWidth - 20;
-      const maxY = windowHeight - buttonHeight - 20;
-
-      // 生成随机位置（最小距离20px）
-      const randomX = 20 + Math.random() * maxX;
-      const randomY = 20 + Math.random() * maxY;
-
-      // 应用新位置
-      disagree.style.left = `${randomX}px`;
-      disagree.style.top = `${randomY}px`;
-      disagree.style.bottom = 'auto';
-      disagree.style.right = 'auto';
-
-      // 更新尝试计数器
-      attempts++;
-      counter.textContent = attempts;
-
-      // 添加动画效果
-      disagree.style.transition = 'all 0.2s ease';
-      setTimeout(() => {
-        disagree.style.transition = '';
-      }, 300);
-    }
-
-    function getColor() {
-      return "hsl(" + 360 * Math.random() + ',' +
-        (25 + 70 * Math.random()) + '%,' +
-        (85 + 10 * Math.random()) + '%)'
-    }
-
-    animate();
-  </script>
+    </script>
 </body>
 
 </html>
